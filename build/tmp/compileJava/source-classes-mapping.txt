@@ -1,4 +1,8 @@
-org/example/controller/MainController.java
- org.example.controller.MainController
+org/example/repos/MessagesRepo.java
+ org.example.repos.MessagesRepo
 org/example/ExampleApplication.java
  org.example.ExampleApplication
+org/example/domain/Messages.java
+ org.example.domain.Messages
+org/example/controller/MainController.java
+ org.example.controller.MainController
