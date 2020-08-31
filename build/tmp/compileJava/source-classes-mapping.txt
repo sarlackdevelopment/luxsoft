@@ -1,8 +1,12 @@
 org/example/repos/MessagesRepo.java
  org.example.repos.MessagesRepo
-org/example/ExampleApplication.java
- org.example.ExampleApplication
 org/example/domain/Messages.java
  org.example.domain.Messages
+org/example/configs/MvcConfig.java
+ org.example.configs.MvcConfig
 org/example/controller/MainController.java
  org.example.controller.MainController
+org/example/ExampleApplication.java
+ org.example.ExampleApplication
+org/example/controller/MessagesController.java
+ org.example.controller.MessagesController
