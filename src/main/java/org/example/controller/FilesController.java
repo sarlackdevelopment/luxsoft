@@ -50,6 +50,8 @@ public class FilesController {
                 return "error";
             } else if (answer.containsKey("Ok")) {
                 return "start";
+            } else if (answer.containsKey("Not valid")) {
+                return "error";
             }
         }
 

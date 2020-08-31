@@ -5,7 +5,7 @@
 </@c.page>
 <div class="container mt-5">
     <form method="post" enctype="multipart/form-data">
-        <input type="file" name="file">
-            <button class="btn btn-primary" type="submit">Add file</button>
+        <input type="file" name="file" accept="text/plain">
+        <button class="btn btn-primary" type="submit">Add file</button>
     </form>
 </div>
