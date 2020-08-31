@@ -9,7 +9,7 @@ import java.util.*;
 @Service
 public class FileService {
 
-    public Map<String, ArrayList<HashMap<String, String>>> readFile(String fileName) {
+    public Map<String, ArrayList<HashMap<String, String>>>  readFile(String fileName) {
 
         HashMap<String, ArrayList<HashMap<String, String>>> answer
                 = new HashMap<String, ArrayList<HashMap<String, String>>>();
@@ -45,7 +45,7 @@ public class FileService {
                     put("name", splittingMetaData[3].trim()); put("value", prepare.get(4).trim());
                 }});
 
-                answer.put("Ok", info);
+                answer.put("OK", info);
             }
         } catch (IOException e) {
             answer.put("Unknown", info);

@@ -1,44 +1,58 @@
 package org.example.domain;
 
+import org.springframework.stereotype.Component;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+@Component
 @Entity
 @Table(name = "msg")
 public class Messages {
 
+    public Long getPRIMARY_KEY() {
+        return PRIMARY_KEY;
+    }
+
+    public void setPRIMARY_KEY(long PRIMARY_KEY) {
+        this.PRIMARY_KEY = PRIMARY_KEY;
+    }
+
+    public String getNAME() {
+        return NAME;
+    }
+
+    public void setNAME(String NAME) {
+        this.NAME = NAME;
+    }
+
+    public String getDESCRIPTION() {
+        return DESCRIPTION;
+    }
+
+    public void setDESCRIPTION(String DESCRIPTION) {
+        this.DESCRIPTION = DESCRIPTION;
+    }
+
+    public String getUPDATED_TIMESTAMP() {
+        return UPDATED_TIMESTAMP;
+    }
+
+    public void setUPDATED_TIMESTAMP(String UPDATED_TIMESTAMP) {
+        this.UPDATED_TIMESTAMP = UPDATED_TIMESTAMP;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    private String title;
-    private String body;
+    private Long PRIMARY_KEY;
+    private String NAME;
+    private String DESCRIPTION;
+    private String UPDATED_TIMESTAMP;
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getBody() {
-        return body;
-    }
-
-    public void setBody(String body) {
-        this.body = body;
-    }
 
 }
 
