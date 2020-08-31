@@ -2,6 +2,7 @@ package org.example.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Map;
 
 import org.example.service.FileService;
@@ -44,8 +45,12 @@ public class FilesController {
 
             file.transferTo(new File(uploadPath + "/" + resultFilename));
 
-            fileService.readFile(uploadPath + "/" + resultFilename);
-
+            Map answer = fileService.readFile(uploadPath + "/" + resultFilename);
+            if (answer.containsKey("Unknown")) {
+                return "error";
+            } else if (answer.containsKey("Ok")) {
+                return "start";
+            }
         }
 
         return "start";
