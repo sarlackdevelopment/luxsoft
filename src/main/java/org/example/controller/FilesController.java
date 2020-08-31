@@ -3,6 +3,9 @@ package org.example.controller;
 import java.io.File;
 import java.io.IOException;
 import java.util.Map;
+
+import org.example.service.FileService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,6 +26,9 @@ public class FilesController {
         return "start";
     }
 
+    @Autowired
+    private FileService fileService;
+
     @PostMapping("/")
     public String addFiles(@RequestParam("file") MultipartFile file) throws IOException {
 
@@ -37,6 +43,8 @@ public class FilesController {
             String resultFilename = uuidFile + "." + file.getOriginalFilename();
 
             file.transferTo(new File(uploadPath + "/" + resultFilename));
+
+            fileService.readFile(uploadPath + "/" + resultFilename);
 
         }
 
